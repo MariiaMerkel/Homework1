@@ -1,69 +1,45 @@
+import java.util.Random;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
-        // Задача 1
-        var dog = 8.0;
-        var cat = 3.6;
-        var paper = 763789;
-        System.out.println("dog = " + dog);
-        System.out.println("cat = " + cat);
-        System.out.println("paper = " + paper);
+        // task 1
+        //isEvenNumber();
 
-        // Задача 2
-        var result1 = dog + 4;
-        var result2 = cat + 4;
-        var result3 = paper + 4;
-        System.out.println("\n result1 = " + result1);
-        System.out.println("result2 = " + result2);
-        System.out.println("result3 = " + result3);
+        // task 2
+//        findNearestNamber();
 
-        // Задача 3
-        var result4 = dog - 3.5;
-        var result5 = cat - 1.6;
-        var result6 = paper - 7639;
-        System.out.println("\n result4 = " + result4);
-        System.out.println("result5 = " + result5);
-        System.out.println("result6 = " + result6);
+        // task 3
+        checkNum((int) (Math.random() * 155 + 3));
 
-        // Задача 4
-        var friend = 19;
-        System.out.println("\n friend = " + friend);
-        friend += 2;
-        System.out.println("friend = " + friend);
-        friend /= 7;
-        System.out.println("friend = " + friend);
 
-        // Задача 5
-        var frog = 3.5;
-        System.out.println("\n frog = " + frog);
-        frog *= 10;
-        System.out.println("frog = " + frog);
-        frog /= 3.5;
-        System.out.println("frog = " + frog);
-        frog += 4;
-        System.out.println("frog = " + frog);
+    }
 
-        // Задача 6
-        var weightBoxer1 = 78.2;
-        var weightBoxer2 = 82.7;
-        var weightTotal = weightBoxer1 + weightBoxer2;
-        System.out.println("\n weightTotal = " + weightTotal);
+    public static void isEvenNumber() {          // task 1
+        System.out.println("Введите целочисленное число");
+        Scanner scanner = new Scanner(System.in);
+        int p = scanner.nextInt();
+        System.out.println(p != 0 && p % 2 == 0 ? "Число " + p + " является чётным." : "Число " + p + " является нечётным.");
+    }
 
-        // Задача 7
+    public static void findNearestNamber(){         // task 2
+        System.out.println("Введите первое число");
+        Scanner scanner = new Scanner(System.in);
+        float p = scanner.nextFloat();
+        System.out.println("Введите второе число");
+        float d = scanner.nextFloat();
+        System.out.println("Введите целочисленное число - ориентир");
+        int referencePoint = scanner.nextInt();
+        if (referencePoint - p < referencePoint - d) System.out.println("Первое число " + p + " ближе к числу " + referencePoint + " чем второе число " + d);
+        else if (referencePoint - p > referencePoint - d) System.out.println("Второе число " + d + " ближе к числу " + referencePoint + " чем первое число " + p);
+        else System.out.println("Оба числа одинаковые");
+    }
 
-        var result7 = weightBoxer2 - weightBoxer1;
-        System.out.println("\n result7 = " + result7);
+    public static void checkNum(int num) {
+        if (num > 22 && num < 99) {
+            System.out.println("Число " + num + " находится в интервале (22;99)");
+        } else System.out.println("Число " + num + " не находится в интервале (22;99)");
 
-        var result8 = weightBoxer2 % weightBoxer1;
-        System.out.println("result8 = " + result8);
-
-        // Задача 7
-
-        var timeTotal = 640;
-        var timeEachEmployees = 8;
-        var amountEmployees = timeTotal / timeEachEmployees;
-        var amountEmployees2 = amountEmployees + 94;
-        var timeTotal2 = timeEachEmployees * amountEmployees2;
-        System.out.println("\n Если в компании работает " + amountEmployees2 + " человек, то всего " + timeTotal2 + " часов работы может быть поделено между сотрудниками.");
     }
 }
